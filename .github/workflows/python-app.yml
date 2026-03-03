@@ -16,5 +16,5 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run temperature test
-        run: python temperature_test.py
+     - name: Run temperature test
+  run: python test-engineering-practice/temperature_test.py
