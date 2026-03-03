@@ -3,7 +3,7 @@ import os
 import random
 from datetime import datetime
 
-MIN_OK = 48.0
+MIN_OK = 49.5
 MAX_OK = 52.0
 DURATION_MINUTES = 60
 INTERVAL_MINUTES = 1
@@ -67,4 +67,5 @@ def run_test() -> int:
     return 0 if passed else 1
 
 if __name__ == "__main__":
+
     raise SystemExit(run_test())
