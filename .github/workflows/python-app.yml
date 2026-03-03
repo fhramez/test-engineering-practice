@@ -9,12 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+  - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: "3.12"
 
-     - name: Run temperature test
-  run: python test-engineering-practice/temperature_test.py
+  - name: Show structure
+    run: |
+      pwd
+      ls -R
+
+  - name: Run temperature test
+    run: python test-engineering-practice/temperature_test.py
