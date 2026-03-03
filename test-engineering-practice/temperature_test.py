@@ -34,6 +34,9 @@ def run_test() -> int:
 
     readings = []
     now = datetime.now().isoformat(timespec="seconds")
+    seed = int(os.getenv("SEED", "42"))
+    random.seed(seed)
+    print(f"Seed: {seed}")
 
     with open(log_path, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -48,6 +51,8 @@ def run_test() -> int:
 
     temps = [t for _, t, _ in readings]
     out_of_range = [(m, t) for m, t, ok in readings if not ok]
+    if out_of_range:
+    print("First out-of-range samples (up to 5):", out_of_range[:5])
 
     min_temp = min(temps)
     max_temp = max(temps)
@@ -67,4 +72,5 @@ def run_test() -> int:
     return 0 if passed else 1
 
 if __name__ == "__main__":
+
     raise SystemExit(run_test())
